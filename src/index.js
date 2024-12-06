@@ -19,9 +19,9 @@ export default function LoginWidget(containerId, { clientId, redirectUrl, onErro
       <div class="login-widget">
         <form id="login-form">
           <button type="submit">
-            <img src="https://d1.awsstatic.com/logos/Amazon-Icon_22_32.22f7f978bfff37cc3b658fa24389a3f4b122fa8e.png" 
-                 alt="Amazon Logo" style="width: 20px; height: 20px; margin-right: 8px;">
-            Login with Amazon
+             <img border="0" alt="Login with Amazon"
+            src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
+            width="156" height="32" />
           </button>
         </form>
       </div>

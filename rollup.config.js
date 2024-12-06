@@ -8,7 +8,7 @@ import css from 'rollup-plugin-import-css';
 export default defineConfig({
   input: 'src/index.js',
   output: {
-    file: 'dist/login-widget-v3.min.js', // Minified output
+    file: 'dist/login-widget-v4.min.js', // Minified output
     format: 'umd', // Universal Module Definition
     name: 'LoginWidget', // Global variable when loaded via <script>
   },
