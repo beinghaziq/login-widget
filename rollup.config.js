@@ -2,33 +2,66 @@ import { defineConfig } from 'rollup';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
-import terser from '@rollup/plugin-terser'; // For minification
-import postcss from 'rollup-plugin-postcss'; // For processing CSS
+import terser from '@rollup/plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
-export default defineConfig({
-  input: 'src/index.js', // Entry point for JS
-  output: [
-    {
-      file: 'dist/login-widget-v4.min.js', // Minified JS output
-      format: 'umd', // Universal Module Definition
-      name: 'LoginWidget', // Global variable when loaded via <script>
-    },
-    {
-      file: 'dist/styles-v1.css', // Output for bundled CSS
-      format: 'es', // ES module format
-    },
-  ],
-  plugins: [
-    resolve(), // Resolve dependencies from node_modules
-    commonjs(), // Convert CommonJS modules to ES modules
-    postcss({
-      extract: true, // Extract CSS into a separate file
-      minimize: true, // Minify the CSS
-    }),
-    babel({
-      babelHelpers: 'bundled',
-      exclude: 'node_modules/**', // Exclude node_modules from transpiling
-    }),
-    terser(), // Minify the JS code
-  ],
-});
+// Read version from package.json
+const version = '6';
+
+export default defineConfig([
+  // JavaScript bundle configuration
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: `dist/login-widget-v${version}.min.js`,
+        format: 'umd',
+        name: 'LoginWidget',
+      },
+      {
+        file: 'dist/login-widget.min.js',
+        format: 'umd',
+        name: 'LoginWidget',
+      }
+    ],
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel({
+        babelHelpers: 'bundled',
+        exclude: 'node_modules/**',
+      }),
+      terser(),
+    ],
+  },
+  // Separate CSS bundle configuration
+  {
+    input: 'src/styles.css',
+    output: [
+      {
+        file: `dist/login-widget-v${version}.min.css`,
+        format: 'es'
+      },
+      {
+        file: 'dist/login-widget.min.css',
+        format: 'es'
+      }
+    ],
+    plugins: [
+      postcss({
+        extract: true,
+        modules: false,
+        plugins: [
+          autoprefixer(),
+          cssnano({
+            preset: 'default',
+          })
+        ],
+        sourceMap: true,
+        minimize: true,
+      })
+    ]
+  }
+]);
