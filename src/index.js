@@ -33,7 +33,7 @@ export default function LoginWidget(containerId, { clientId, redirectUrl, onErro
       event.preventDefault(); // Prevent form from submitting normally
   
       // Construct the Amazon login URL with clientId and redirectUrl
-      const amazonLoginUrl = `http://localhost:5174/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUrl)}&response_type=code&scope=profile`;
+      const amazonLoginUrl = `http://localhost:5174/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUrl)}&response_type=code&scope=profile&request_uri=urn:request:e6079fb1-a117-4e02-9a22-a6ba80010085&nonce=NHO9SFs60dNWPDtbhZYhuA&state=774vgYnxyYRqNLGeFGOP5g`;
   
       // Redirect the user to the Amazon login page
       window.location.href = amazonLoginUrl;
@@ -42,4 +42,3 @@ export default function LoginWidget(containerId, { clientId, redirectUrl, onErro
       if (callback) callback({ clientId, redirectUrl });
     });
   }
-  

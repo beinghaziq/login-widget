@@ -8,7 +8,8 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
 // Read version from package.json
-const version = '6';
+const version = '7';
+const cssVersion = '6';
 
 export default defineConfig([
   // JavaScript bundle configuration
@@ -41,7 +42,7 @@ export default defineConfig([
     input: 'src/styles.css',
     output: [
       {
-        file: `dist/login-widget-v${version}.min.css`,
+        file: `dist/login-widget-v${cssVersion}.min.css`,
         format: 'es'
       },
       {
