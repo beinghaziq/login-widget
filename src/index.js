@@ -9,8 +9,6 @@ export default function LoginWidget(containerId, callback) {
     container.innerHTML = `
       <div class="login-widget">
         <form id="login-form">
-          <input type="text" id="username" placeholder="Username" required />
-          <input type="password" id="password" placeholder="Password" required />
           <button type="submit">Login</button>
         </form>
       </div>
@@ -19,10 +17,7 @@ export default function LoginWidget(containerId, callback) {
     // Event Listener
     const form = container.querySelector('#login-form');
     form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const username = form.querySelector('#username').value;
-      const password = form.querySelector('#password').value;
-      console.log({ username, password });
+        alert("clicked")
     });
   }
   
