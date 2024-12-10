@@ -1,54 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App with Login with Amazon widget</title>
-  <!-- Optional: Widget styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/login-widget-v6.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <!-- MUI Core -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/mui/5.13.6/mui.min.css"
-  />
-</head>
-<body>
-  <div id="login-container"></div>
-  <div id="root"></div>
-
-
-  <!-- Include the widget script -->
-  <!-- <script src="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/login-widget-v7.min.js"></script>
-  <script>
-    // Configuration for the Login Widget
-    const config = {
-      clientId: 'your-amazon-client-id',
-      redirectUrl: 'your-redirect-url',
-      onError: (message) => {
-        console.error(message);
-      }
-    };
-
-    // Initialize the LoginWidget
-    LoginWidget('login-container', config);
-  </script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.0.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.0.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/LoginDialog.js"></script>
-
-<script>
-    // Ensure the component is loaded and rendered
-    const rootElement = document.getElementById('root');
-
-    ReactDOM.createRoot(rootElement).render(
-      React.createElement(LoginDialog.default || LoginDialog, {
-        clientId: '1234',
-        redirectUrl: 'https://example.com/redirect',
-      })
-    );
-  </script>
-</body>
-</html>
-
+<div id="something-in-your-website">
+    <div class="nicoraynaud-finance-widget"
+         data-symbol="GME">
+    </div>
+  </div>
+  ...
+  ...
+  <div id="something-else-in-your-website">
+    <div class="nicoraynaud-finance-widget"
+         data-symbol="AMZN">
+    </div>
+  </div>
+  <!-- /!\ Only add these two tags once per page -->
+  <link href="https://tekinico.com/demo/react-widget/index.css" rel="stylesheet"/>
+  <script src="https://tekinico.com/demo/react-widget/index.js"></script>
