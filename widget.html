@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App with Login with Amazon widget</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/login-widget-v6.min.css">
 </head>
+
 <body>
 
   <div id="widget"></div>
 
-  <link href="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/main-v1.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/main-v1.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/main-v3.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/beinghaziq/login-widget/dist/main-v3.js"></script>
+  <script>
+    PolnWidget.mount({
+      clientId: "PolnLocalTest"
+    });
+  </script>
 
 </body>
-</html>
 
+</html>
